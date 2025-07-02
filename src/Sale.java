@@ -1,4 +1,7 @@
-package PACKAGE_NAME;
+public class Sale extends Deal{
 
-public class Sale {
+    //Создайте два наследника: Sale (продажа) и Expenditure (трата).
+    // Объект Sale должен конструироваться от названия товара и его цены,
+    // являясь сделкой с комментарием (comment) вида Продажа <название товара> на <цена> руб.,
+    // debitChange размером в цену и нулевым creditChange
 }

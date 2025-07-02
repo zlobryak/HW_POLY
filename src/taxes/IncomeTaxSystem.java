@@ -1,4 +1,4 @@
 package taxes;
 
-public class IncomeTaxSystem {
+public class IncomeTaxSystem extends TaxSystem{
 }

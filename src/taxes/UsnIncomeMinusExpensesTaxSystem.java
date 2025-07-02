@@ -1,4 +1,5 @@
 package taxes;
 
-public class UsnIncomeMinusExpensesTaxSystem {
+public class UsnIncomeMinusExpensesTaxSystem  extends TaxSystem{
+
 }
