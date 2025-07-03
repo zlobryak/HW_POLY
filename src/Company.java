@@ -16,14 +16,23 @@ public class Company {
     }
 
     public void shiftMoney(int amount) {
-        //У компании должен быть метод shiftMoney(int amount), который работает так:
-        //
-        //если amount больше 0, то увеличивается значение debit на amount;
-        //если amount меньше 0, то увеличивается значение credit на Math.abs(amount);
+        //У компании должен быть метод shiftMoney(int amount), который работает так
+        if (amount > 0){
+            //если amount больше 0, то увеличивается значение debit на amount;
+            debit = debit + amount;
+        } else if (amount <0 ) {
+            //если amount меньше 0, то увеличивается значение credit на Math.abs(amount);
+            debit = debit + Math.abs(amount);
+        }
         //если amount равен 0, то ничего не происходит.
     }
 
     public void payTaxes(){
+        System.out.printf(
+                "Компания %s уплатила налог в размере: %d руб. = ",
+                title,
+                taxSystem.calcTaxFor(debit, credit));
+    ;
         //рассчитает с помощью выбранной этой компанией системы налогооблажения размер налогов;
         //выведет сообщение на экран вида: Компания <название> уплатила налог в размере: <сумма> руб.;
         //обнулит счётчики debit и credit.
