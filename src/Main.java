@@ -1,6 +1,5 @@
 import taxes.IncomeMinusExpensesTaxSystem;
 import taxes.IncomeTaxSystem;
-import taxes.TaxSystem;
 import deals.Expenditure;
 import deals.Sale;
 import deals.Deal;
@@ -10,15 +9,17 @@ public class Main {
 
         //Проверим работу расчёта налогов в двух разных
         System.out.print("Для УСН доходы:\n");
-        TaxSystem taxIncome = new IncomeTaxSystem();
-        Company company = new Company("CompanyName",taxIncome);
+        Company company = new Company(
+                "CompanyName",
+                new IncomeTaxSystem());
         company.shiftMoney(+100);
         company.shiftMoney(-20);
         company.payTaxes();
 
         System.out.print("Для УСН доходы минус расходы:\n");
-        TaxSystem taxIncomeMinusExpenses = new IncomeMinusExpensesTaxSystem();
-        Company company1 = new Company("CompanyName1", taxIncomeMinusExpenses);
+        Company company1 = new Company(
+                "CompanyName1",
+                new IncomeMinusExpensesTaxSystem());
         company1.shiftMoney(10100);
         company1.shiftMoney(-100);
         company1.payTaxes();
@@ -26,7 +27,7 @@ public class Main {
         System.out.println();
 
 
-        //Создадим список сделок:
+        //Создадим списоки сделок:
         Deal[] deals= {
                 new Expenditure("Бумага", 100),
                 new Sale("Мороженное",  60),
@@ -40,7 +41,6 @@ public class Main {
         };
         //Проверим работу метода рассчитывающего сделки
         System.out.print("Раcчёт списка сделок:\n\n");
-
 
         System.out.printf(
                 "Разница дохолов и расходов компании %s: %d\n",
